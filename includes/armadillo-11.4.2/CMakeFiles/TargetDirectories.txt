@@ -1,0 +1,16 @@
+/home/nippun/wasm/webml/armadillo-11.4.2/CMakeFiles/armadillo.dir
+/home/nippun/wasm/webml/armadillo-11.4.2/CMakeFiles/test.dir
+/home/nippun/wasm/webml/armadillo-11.4.2/CMakeFiles/edit_cache.dir
+/home/nippun/wasm/webml/armadillo-11.4.2/CMakeFiles/rebuild_cache.dir
+/home/nippun/wasm/webml/armadillo-11.4.2/CMakeFiles/list_install_components.dir
+/home/nippun/wasm/webml/armadillo-11.4.2/CMakeFiles/install.dir
+/home/nippun/wasm/webml/armadillo-11.4.2/CMakeFiles/install/local.dir
+/home/nippun/wasm/webml/armadillo-11.4.2/CMakeFiles/install/strip.dir
+/home/nippun/wasm/webml/armadillo-11.4.2/tests1/CMakeFiles/smoke_test.dir
+/home/nippun/wasm/webml/armadillo-11.4.2/tests1/CMakeFiles/test.dir
+/home/nippun/wasm/webml/armadillo-11.4.2/tests1/CMakeFiles/edit_cache.dir
+/home/nippun/wasm/webml/armadillo-11.4.2/tests1/CMakeFiles/rebuild_cache.dir
+/home/nippun/wasm/webml/armadillo-11.4.2/tests1/CMakeFiles/list_install_components.dir
+/home/nippun/wasm/webml/armadillo-11.4.2/tests1/CMakeFiles/install.dir
+/home/nippun/wasm/webml/armadillo-11.4.2/tests1/CMakeFiles/install/local.dir
+/home/nippun/wasm/webml/armadillo-11.4.2/tests1/CMakeFiles/install/strip.dir
