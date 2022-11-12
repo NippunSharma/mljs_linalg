@@ -21,6 +21,19 @@ struct MatAccess {
           }
       }
 
+      static bool set(
+          MatType& self,
+          arma::uword row_idx,
+          arma::uword col_idx,
+          const typename MatType::elem_type& value
+      ) {
+          if (col_idx >= self.n_cols || row_idx >= self.n_rows)
+            return false;
+
+          self(row_idx, col_idx) = value;
+          return true;
+      }
+
       static val get_submat(
           const MatType& self,
           arma::uword first_row,
@@ -40,19 +53,6 @@ struct MatAccess {
           MatType& new_val
       ) {
           self.submat(first_row, first_col, last_row, last_col) = new_val;
-          return true;
-      }
-
-      static bool set(
-          MatType& self,
-          arma::uword row_idx,
-          arma::uword col_idx,
-          const typename MatType::elem_type& value
-      ) {
-          if (col_idx > self.n_cols || row_idx > self.n_rows)
-            return false;
-
-          self(row_idx, col_idx) = value;
           return true;
       }
 
