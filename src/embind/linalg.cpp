@@ -5,7 +5,7 @@
 using namespace emscripten;
 
 EMSCRIPTEN_BINDINGS(webml_linalg) {
-  REGISTER_ARMA_MAT(double, "ArmaMatDouble");
-  REGISTER_ARMA_MAT(int, "ArmaMatInt");
-  REGISTER_ARMA_MAT(float, "ArmaMatFloat");
+  REGISTER_ARMA_MAT(double_t, "ArmaMatDouble")
+  REGISTER_ARMA_MAT(int, "ArmaMatInt")
+  REGISTER_ARMA_MAT(float, "ArmaMatFloat")
 }
