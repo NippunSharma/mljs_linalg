@@ -204,6 +204,18 @@ struct MatAccess {
         }
         return true;
       }
+
+      static arma::Col<typename MatType::elem_type> as_col(const MatType& self) {
+        return self.as_col();
+      }
+
+      static arma::Row<typename MatType::elem_type> as_row(const MatType& self) {
+        return self.as_row();
+      }
+
+      static arma::Mat<typename MatType::elem_type> t(const MatType& self) {
+        return self.t();
+      }
 };
 
 #endif // EMBIND_CLASSES_MAT_ACCESS_HPP
