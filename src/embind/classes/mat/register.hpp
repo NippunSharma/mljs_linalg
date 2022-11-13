@@ -32,6 +32,7 @@
         .function("shed_col", &MatAccess<arma::Mat<T>>::shed_col) \
         .function("shed_rows", &MatAccess<arma::Mat<T>>::shed_rows) \
         .function("shed_cols", &MatAccess<arma::Mat<T>>::shed_cols) \
+        .function("func_fill", &MatAccess<arma::Mat<T>>::func_fill) \
         ;
 
 #endif EMBIND_CLASSES_MAT_REGISTER_HPP

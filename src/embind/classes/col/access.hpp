@@ -39,6 +39,14 @@ struct ColAccess {
           self.set_size(n_elem);
           return true;
       }
+
+      static bool func_fill(ColType& self, const val& func) {
+        typedef typename ColType::elem_type elem_type;
+        for(int i=0; i<self.n_elem; i++) {
+          self(i) = func(i).as<elem_type>();
+        }
+        return true;
+      }
 };
 
 #endif // EMBIND_CLASSES_COL_ACCESS_HPP

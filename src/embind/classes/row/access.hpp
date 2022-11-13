@@ -39,6 +39,14 @@ struct RowAccess {
           self.set_size(n_elem);
           return true;
       }
+
+      static bool func_fill(RowType& self, const val& func) {
+        typedef typename RowType::elem_type elem_type;
+        for(int i=0; i<self.n_elem; i++) {
+          self(i) = func(i).as<elem_type>();
+        }
+        return true;
+      }
 };
 
 #endif // EMBIND_CLASSES_ROW_ACCESS_HPP

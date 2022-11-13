@@ -194,6 +194,16 @@ struct MatAccess {
         self.print(ostream);
         return ostream.str();
       }
+
+      static bool func_fill(MatType& self, const val& func) {
+        typedef typename MatType::elem_type elem_type;
+        for(int i=0; i<self.n_rows; i++) {
+          for(int j=0; j<self.n_cols; j++) {
+            self(i, j) = func(i, j).as<elem_type>();
+          }
+        }
+        return true;
+      }
 };
 
 #endif // EMBIND_CLASSES_MAT_ACCESS_HPP
