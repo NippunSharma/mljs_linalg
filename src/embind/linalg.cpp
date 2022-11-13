@@ -6,6 +6,7 @@
 
 #include "generators/linspace/register.hpp"
 #include "generators/logspace/register.hpp"
+#include "generators/regspace/register.hpp"
 
 #include <emscripten/bind.h>
 using namespace emscripten;
@@ -25,4 +26,5 @@ EMSCRIPTEN_BINDINGS(webml_linalg) {
 
   REGISTER_GEN_LINSPACE
   REGISTER_GEN_LOGSPACE
+  REGISTER_GEN_REGSPACE
 }
