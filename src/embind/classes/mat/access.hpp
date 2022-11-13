@@ -195,6 +195,7 @@ struct MatAccess {
         return ostream.str();
       }
 
+      // CUSTOM func_fill
       static bool func_fill(MatType& self, const val& func) {
         typedef typename MatType::elem_type elem_type;
         for(int i=0; i<self.n_rows; i++) {
@@ -215,6 +216,28 @@ struct MatAccess {
 
       static arma::Mat<typename MatType::elem_type> t(const MatType& self) {
         return self.t();
+      }
+
+      // CUSTOM all
+      static bool all(const MatType& self, const val& func) {
+        for(int i=0; i<self.n_rows; i++) {
+          for(int j=0; j<self.n_cols; j++) {
+            if (!func(self(i, j)).template as<bool>())
+              return false;
+          }
+        }
+        return true;
+      }
+
+      // CUSTOM any
+      static bool any(const MatType& self, const val& func) {
+        for(int i=0; i<self.n_rows; i++) {
+          for(int j=0; j<self.n_cols; j++) {
+            if (func(self(i, j)).template as<bool>())
+              return true;
+          }
+        }
+        return false;
       }
 };
 

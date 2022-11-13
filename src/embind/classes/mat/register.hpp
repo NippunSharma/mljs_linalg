@@ -36,6 +36,8 @@
         .function("as_row", &MatAccess<arma::Mat<T>>::as_row) \
         .function("as_col", &MatAccess<arma::Mat<T>>::as_col) \
         .function("t", &MatAccess<arma::Mat<T>>::t) \
+        .function("all", &MatAccess<arma::Mat<T>>::all) \
+        .function("any", &MatAccess<arma::Mat<T>>::any) \
         ;
 
 #endif EMBIND_CLASSES_MAT_REGISTER_HPP

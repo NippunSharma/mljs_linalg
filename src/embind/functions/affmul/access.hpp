@@ -4,7 +4,6 @@
 #include <emscripten/bind.h>
 using namespace emscripten;
 
-#include <utility>
 #include <armadillo>
 
 template<typename T>
