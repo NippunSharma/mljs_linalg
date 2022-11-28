@@ -1,6 +1,10 @@
 {
   "name": "@webml/linalg",
-  "version": "1.0.0",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NippunSharma/webml-linalg"
+  },
   "description": "A package for linear algebra in the browser !!",
   "main": "dist/src/types/index.js",
   "types": "dist/src/types/index.d.ts",
@@ -18,7 +22,7 @@
     "c++",
     "matrix"
   ],
-  "author": "",
+  "author": "Nippun Sharma",
   "license": "BSD-3-Clause",
   "devDependencies": {
     "shx": "^0.3.4"
