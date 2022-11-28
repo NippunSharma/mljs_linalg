@@ -1,0 +1,3 @@
+[submodule "CLAPACK-3.2.1"]
+	path = includes/CLAPACK-3.2.1
+	url = git@github.com:NippunSharma/CLAPACK-3.2.1
