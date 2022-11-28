@@ -25,3 +25,30 @@ const B = A.t(); // transpose of A.
 console.log(A.toString());
 console.log(B.toString());
 ```
+
+### Steps to build.
+1. Clone github repo.
+```bash
+git clone --recurse-submodules https://github.com/NippunSharma/webml-linalg
+```
+2. Move to project dir.
+```bash
+cd webml-linalg
+mkdir -p build
+```
+3. Build clapack object files first.
+```bash
+make clapack
+```
+4. Build `webml_linalg.wasm` binary along with `webml_linalg.js`.
+```bash
+make webml_linalg
+```
+5. Now, generate the `dist` dir.
+```bash
+npm run build
+```
+
+Alternatively, you can directly execute `npm run build` and it will
+use the pre-existing binary file in `resources/`. However, if anything
+is changed in `src/embind`, it is recommended to rebuild the binary.
