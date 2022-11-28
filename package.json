@@ -2,11 +2,11 @@
   "name": "@webml/linalg",
   "version": "1.0.0",
   "description": "A package for linear algebra in the browser !!",
-  "main": "dist-module/src/types/index.js",
-  "types": "dist-module/src/types/index.d.ts",
+  "main": "dist/src/types/index.js",
+  "types": "dist/src/types/index.d.ts",
   "scripts": {
-    "build": "shx mkdir -p dist-module && tsc --outdir dist-module && shx cp resources/webml_linalg.wasm dist-module/resources/webml_linalg.wasm",
-    "clean": "shx rm -rf dist-module",
+    "build": "mkdir -p dist && tsc && cp resources/webml_linalg.wasm dist/resources/webml_linalg.wasm",
+    "clean": "rm -rf dist",
     "rebuild": "npm run clean && npm run build"
   },
   "keywords": [

@@ -1,6 +1,6 @@
-src/
 includes/
 node_modules/
 .vscode/
 build/
 resources/
+src/
