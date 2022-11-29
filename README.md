@@ -1,16 +1,16 @@
-@webml/linalg is a linear algebra library for the browser based on [armadillo](https://gitlab.com/conradsnicta/armadillo-code).
+webml-linalg is a linear algebra library for the browser based on [armadillo](https://gitlab.com/conradsnicta/armadillo-code).
 
-@webml/linalg uses Web Assembly to run armadillo code (in C++) in the browser.
+webml-linalg uses Web Assembly to run armadillo code (in C++) in the browser.
 
 ### Steps to install.
 This library can be installed directly via npm:
 ```bash
-npm install @webml/linalg
+npm install @nippun/linalg
 ```
 
 ### Basic usage.
 ```typescript
-import { Matrix } from "@webml/linalg";
+import { Matrix } from "@nippun/linalg";
 
 async getMatrix() {
   const A: Matrix<number> = new Matrix<number>({ n_rows: 2, n_cols: 2 }, "float");
