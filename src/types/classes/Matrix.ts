@@ -1,9 +1,10 @@
 import { MatSize } from "./MatSize.js";
 import { MatType } from "../primitives/Value.js";
+import { getInstance } from "../Stream.js";
 
 export class Matrix<T> {
   // default values.
-  protected armaMat: any = undefined;
+  protected armaMat: any;
   protected matSize: MatSize = { n_rows: 0, n_cols: 0 };
   protected elemType: MatType = "double";
 
@@ -13,8 +14,7 @@ export class Matrix<T> {
   }
 
   async init() {
-    const { default: instantiate } = await import("../../../resources/webml_linalg");
-    const instance = await instantiate();
+    const instance = await getInstance();
     switch (this.elemType) {
       case "double":
         this.armaMat = new instance.arma_mat_double();
@@ -54,6 +54,10 @@ export class Matrix<T> {
 
   setArmaMat(armaMat: any) {
     this.armaMat = armaMat;
+  }
+
+  getArmaMat() {
+    return this.armaMat;
   }
 
   getSubmat(rowStart: number, colStart: number, rowEnd: number, colEnd: number): Matrix<T> {
@@ -164,5 +168,14 @@ export class Matrix<T> {
 
   any(condFunc: (val: T) => boolean): boolean {
     return this.armaMat.any(condFunc);
+  }
+
+  newWrapper(): Matrix<T> {
+    const A: Matrix<T> = new Matrix<T>(this.size, this.matType);
+    return A;
+  }
+
+  objType(): "mat" | "row" | "col" {
+    return "mat";
   }
 }

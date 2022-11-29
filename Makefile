@@ -12,5 +12,5 @@ clapack:
 
 webml_linalg:
 	emcc src/embind/linalg.cpp -o build/webml_linalg.js -I includes/armadillo-11.4.2/include build/clapack/blas_*.a build/clapack/liblapack.a build/clapack/libf2c.a --bind \
-		-s ALLOW_MEMORY_GROWTH -O3 -s MODULARIZE=1 -s ENVIRONMENT='web'; \
-	cp build/webml_linalg.js build/webml_linalg.wasm resources/
+		-s ALLOW_MEMORY_GROWTH -O3 -s MODULARIZE=1 -s ENVIRONMENT='web' -s SINGLE_FILE=1; \
+	cp build/webml_linalg.js resources/

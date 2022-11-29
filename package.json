@@ -9,7 +9,7 @@
   "main": "dist/src/types/index.js",
   "types": "dist/src/types/index.d.ts",
   "scripts": {
-    "build": "mkdir -p dist && tsc && cp resources/webml_linalg.wasm dist/resources/webml_linalg.wasm",
+    "build": "mkdir -p dist && tsc",
     "clean": "rm -rf dist",
     "rebuild": "npm run clean && npm run build"
   },

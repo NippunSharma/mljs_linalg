@@ -1,6 +1,7 @@
 import { MatSize } from "./MatSize.js";
 import { MatType } from "../primitives/Value.js";
 import { Matrix } from "./Matrix.js";
+import { getInstance } from "../Stream.js";
 
 export class Col<T> extends Matrix<T> {
   constructor(matSize: MatSize, matType: MatType) {
@@ -8,8 +9,7 @@ export class Col<T> extends Matrix<T> {
   }
 
   async init() {
-    const { default: instantiate } = await import("../../../resources/webml_linalg");
-    const instance = await instantiate();
+    const instance = await getInstance();
 
     switch (this.matType) {
       case "double":
@@ -38,5 +38,14 @@ export class Col<T> extends Matrix<T> {
     let changed: boolean = false;
     changed = this.armaMat.set(i, val);
     return changed;
+  }
+
+  newWrapper(): Col<T> {
+    const A: Col<T> = new Col<T>(this.size, this.matType);
+    return A;
+  }
+
+  objType(): "mat" | "row" | "col" {
+    return "col";
   }
 }
