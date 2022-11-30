@@ -5,7 +5,7 @@
 ### Steps to install.
 This library can be installed directly via npm:
 ```bash
-npm install @nippun/linalg
+npm install @ml.js/linalg
 ```
 
 ### Basic usage.
