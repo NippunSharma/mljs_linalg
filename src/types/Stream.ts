@@ -1,7 +1,7 @@
 let instance = undefined;
 
 export async function init() {
-  const { default: instantiate } = await import("../../resources/webml_linalg");
+  const { default: instantiate } = await import("../../resources/mljs_linalg");
   instance = instantiate();
 }
 
