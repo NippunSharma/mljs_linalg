@@ -1,9 +1,9 @@
 import { MatSize } from "./MatSize.js";
-import { MatType } from "../primitives/Value.js";
+import { MatType, MatTsType } from "../primitives/Value.js";
 import { Matrix } from "./Matrix.js";
 import { getInstance } from "../Stream.js";
 
-export class Row<T> extends Matrix<T> {
+export class Row<T extends MatTsType> extends Matrix<T> {
   constructor(matSize: MatSize, matType: MatType) {
     super({n_cols: matSize.n_cols, n_rows: 1}, matType);
   }
@@ -12,10 +12,6 @@ export class Row<T> extends Matrix<T> {
     const instance = await getInstance();
 
     switch (this.matType) {
-      case "double":
-        this.armaMat = new instance.arma_row_double();
-        this.armaMat.set_size(this.matSize.n_cols);
-        break;
       case "float":
         this.armaMat = new instance.arma_row_float();
         this.armaMat.set_size(this.matSize.n_cols);
@@ -25,7 +21,7 @@ export class Row<T> extends Matrix<T> {
         this.armaMat.set_size(this.matSize.n_cols);
         break;
       default:
-        this.armaMat = new instance.arma_row_double();
+        this.armaMat = new instance.arma_row_float();
         this.armaMat.set_size(this.matSize.n_cols);
     }
   }

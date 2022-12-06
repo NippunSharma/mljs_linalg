@@ -19,15 +19,12 @@
 using namespace emscripten;
 
 EMSCRIPTEN_BINDINGS(webml_linalg) {
-  REGISTER_ARMA_MAT(double, "arma_mat_double")
   REGISTER_ARMA_MAT(int, "arma_mat_int")
   REGISTER_ARMA_MAT(float, "arma_mat_float")
 
-  REGISTER_ARMA_ROW(double, "arma_row_double")
   REGISTER_ARMA_ROW(int, "arma_row_int")
   REGISTER_ARMA_ROW(float, "arma_row_float")
 
-  REGISTER_ARMA_COL(double, "arma_col_double")
   REGISTER_ARMA_COL(int, "arma_col_int")
   REGISTER_ARMA_COL(float, "arma_col_float")
 
@@ -38,8 +35,10 @@ EMSCRIPTEN_BINDINGS(webml_linalg) {
   REGISTER_FUNC_ABS
   REGISTER_FUNC_ACCU
   REGISTER_FUNC_AFFMUL
-  REGISTER_FUNC_APPROX_EQUAL(double, "double")
+
   REGISTER_FUNC_APPROX_EQUAL(float, "float")
   REGISTER_FUNC_APPROX_EQUAL(int, "int")
-  REGISTER_FUNC_MATMUL(double, "double")
+
+  REGISTER_FUNC_MATMUL(float, "float")
+  REGISTER_FUNC_MATMUL(int, "int")
 }

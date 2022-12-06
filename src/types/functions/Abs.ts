@@ -2,8 +2,9 @@ import { Matrix } from "../classes/Matrix";
 import { Col } from "../classes/Col";
 import { Row } from "../classes/Row";
 import { getInstance } from "../Stream";
+import { MatTsType } from "../primitives/Value";
 
-export async function Abs<T>(A: Matrix<T> | Col<T> | Row<T>): Promise<Matrix<T> | Col<T> | Row<T>> {
+export async function Abs<T extends MatTsType>(A: Matrix<T> | Col<T> | Row<T>): Promise<Matrix<T> | Col<T> | Row<T>> {
   let A_abs = A.newWrapper();
   const instance = await getInstance();
 
@@ -12,9 +13,6 @@ export async function Abs<T>(A: Matrix<T> | Col<T> | Row<T>): Promise<Matrix<T> 
   switch (A.objType()) {
     case "mat":
       switch (A.matType) {
-        case "double":
-          inner = instance.abs_mat_double(A.getArmaMat());
-          break;
         case "float":
           inner = instance.abs_mat_float(A.getArmaMat());
           break;
@@ -25,9 +23,6 @@ export async function Abs<T>(A: Matrix<T> | Col<T> | Row<T>): Promise<Matrix<T> 
       break;
     case "col":
       switch (A.matType) {
-        case "double":
-          inner = instance.abs_col_double(A.getArmaMat());
-          break;
         case "float":
           inner = instance.abs_col_float(A.getArmaMat());
           break;
@@ -38,9 +33,6 @@ export async function Abs<T>(A: Matrix<T> | Col<T> | Row<T>): Promise<Matrix<T> 
       break;
     case "row":
       switch (A.matType) {
-        case "double":
-          inner = instance.abs_row_double(A.getArmaMat());
-          break;
         case "float":
           inner = instance.abs_row_float(A.getArmaMat());
           break;
