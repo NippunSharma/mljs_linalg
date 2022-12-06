@@ -12,7 +12,7 @@
     "build": "mkdir -p dist && tsc",
     "clean": "rm -rf dist",
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
-    "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test",
+    "coverage": "nyc -r text-summary -e .ts -x \"*.test.ts\" npm run test",
     "rebuild": "npm run clean && npm run build"
   },
   "keywords": [
