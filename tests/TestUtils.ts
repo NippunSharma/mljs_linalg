@@ -26,7 +26,8 @@ export function ObjEqualArray<T extends MatTsType>
 export function MatEqualMat<T extends MatTsType>
 (
   matA: Matrix<T>,
-  matB: Matrix<T>
+  matB: Matrix<T>,
+  tol: number = 0
 ) {
   expect(matA.size).eql(matB.size, 'matA and matB should have same dimensions.');
 
@@ -35,7 +36,7 @@ export function MatEqualMat<T extends MatTsType>
 
   for(var i = 0; i < n_rows; i++) {
     for(var j = 0; j < n_cols; j++) {
-      expect(matA.get(i, j)).equal(matB.get(i, j),
+      expect(matA.get(i, j)).to.closeTo(matB.get(i, j), tol,
           `element at (${i}, ${j}) is not equal.`)
     }
   }
