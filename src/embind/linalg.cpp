@@ -15,6 +15,8 @@
 #include "functions/approx_equal/register.hpp"
 #include "functions/matmul/register.hpp"
 
+#include "utils/register.hpp"
+
 #include <emscripten/bind.h>
 using namespace emscripten;
 
@@ -36,9 +38,11 @@ EMSCRIPTEN_BINDINGS(webml_linalg) {
   REGISTER_FUNC_ACCU
   REGISTER_FUNC_AFFMUL
 
+  REGISTER_FUNC_MATMUL
+
   REGISTER_FUNC_APPROX_EQUAL(float, "float")
   REGISTER_FUNC_APPROX_EQUAL(int, "int")
 
-  REGISTER_FUNC_MATMUL(float, "float")
-  REGISTER_FUNC_MATMUL(int, "int")
+  REGISTER_UTILS(float, "float")
+  REGISTER_UTILS(int, "int")
 }

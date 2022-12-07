@@ -4,12 +4,9 @@
 #include "access.hpp"
 #include <string>
 
-#define REGISTER_FUNC_MATMUL(eT, name) \
-        function((std::string("matmul_mat_row_") + std::string(name)).c_str(), &matmul<arma::Mat<eT>, arma::Row<eT>>); \
-        function((std::string("matmul_mat_col_") + std::string(name)).c_str(), &matmul<arma::Mat<eT>, arma::Col<eT>>); \
-        function((std::string("matmul_row_col_") + std::string(name)).c_str(), &matmul<arma::Row<eT>, arma::Col<eT>>); \
-        function((std::string("matmul_mat_mat_") + std::string(name)).c_str(), &matmul<arma::Mat<eT>, arma::Mat<eT>>); \
-        function((std::string("matmul_row_row_") + std::string(name)).c_str(), &matmul<arma::Row<eT>, arma::Row<eT>>); \
-        function((std::string("matmul_col_col_") + std::string(name)).c_str(), &matmul<arma::Col<eT>, arma::Col<eT>>); \
+#define REGISTER_FUNC_MATMUL \
+        function("matmul_float_int", &matmul<arma::Mat<float>, arma::Mat<int> >); \
+        function("matmul_float_float", &matmul<arma::Mat<float>, arma::Mat<float> >); \
+        function("matmul_int_int", &matmul<arma::Mat<int>, arma::Mat<int> >); \
 
 #endif // EMBIND_FUNCTIONS_MATMUL_REGISTER_HPP

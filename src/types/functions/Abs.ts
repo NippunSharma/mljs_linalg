@@ -4,7 +4,7 @@ import { Row } from "../classes/Row";
 import { getInstance } from "../Stream";
 import { MatTsType } from "../primitives/Value";
 
-export async function Abs<T extends MatTsType>(A: Matrix<T> | Col<T> | Row<T>): Promise<Matrix<T> | Col<T> | Row<T>> {
+export async function Abs<T extends MatTsType>(A: Matrix<T>): Promise<Matrix<T>> {
   let A_abs = A.newWrapper();
   const instance = await getInstance();
 

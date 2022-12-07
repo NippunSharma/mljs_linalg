@@ -6,7 +6,8 @@ import { expect } from "chai";
 export function ObjEqualArray<T extends MatTsType>
 (
   obj: Matrix<T>,
-  array: Array<T>
+  array: Array<T>,
+  tol: number = 0
 ) {
   const n_rows: number = obj.size.n_rows;
   const n_cols: number = obj.size.n_cols;
@@ -16,7 +17,7 @@ export function ObjEqualArray<T extends MatTsType>
 
   for(var i = 0; i < n_rows; i++) {
     for(var j = 0; j < n_cols; j++) {
-      expect(obj.get(i, j)).equal(array[i * n_cols + j],
+      expect(obj.get(i, j)).to.closeTo(array[i * n_cols + j], tol,
           `element ${obj.get(i, j)} at (${i}, ${j}) is not same as ${array[i * n_cols + j]}.`);
     }
   }
