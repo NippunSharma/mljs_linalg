@@ -10,7 +10,7 @@ using namespace emscripten;
 template<typename T, typename U>
 struct get_output_type {
   using type = std::conditional_t<std::is_same_v<T, U>, T,
-      std::conditional_t<(std::is_floating_point_v<T> || std::is_floating_point_v<U>), float_t, T>>;
+      std::conditional_t<(std::is_floating_point_v<T> || std::is_floating_point_v<U>), double_t, T>>;
 };
 
 template<typename T, typename U>

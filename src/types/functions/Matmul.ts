@@ -15,9 +15,9 @@ export async function Matmul<T extends MatTsType>(
 
   const instance = await getInstance();
 
-  if ((matA.matType === "float") && (matB.matType === "float")) {
-    const inner = instance.matmul_float_float((await matA.asMat()).getArmaMat(), (await matB.asMat()).getArmaMat());
-    const result = new Matrix<T>({ n_rows, n_cols }, "float");
+  if ((matA.matType === "double") && (matB.matType === "double")) {
+    const inner = instance.matmul_double_double((await matA.asMat()).getArmaMat(), (await matB.asMat()).getArmaMat());
+    const result = new Matrix<T>({ n_rows, n_cols }, "double");
     result.setArmaMat(inner);
     return result;
   } else if ((matA.matType === "int") && (matB.matType === "int")) {
@@ -29,9 +29,9 @@ export async function Matmul<T extends MatTsType>(
     const a = (await matA.asMat()).getArmaMat();
     const b = (await matB.asMat()).getArmaMat();
 
-    const inner = instance.matmul_float_int(matA.matType === "float" ? a: b,
+    const inner = instance.matmul_double_int(matA.matType === "double" ? a: b,
       matB.matType === "int" ? b: a);
-    const result = new Matrix<T>({ n_rows, n_cols }, "float");
+    const result = new Matrix<T>({ n_rows, n_cols }, "double");
     result.setArmaMat(inner);
     return result;
   }

@@ -94,8 +94,8 @@ describe("matmul", function() {
     ObjEqualArray(await Matmul(matB, matA), ans);
   });
 
-  it("float_int_1", async function() {
-    const matA: Matrix<number> = new Matrix<number>({ n_rows: 5, n_cols: 5 }, "float");
+  it("double_int_1", async function() {
+    const matA: Matrix<number> = new Matrix<number>({ n_rows: 5, n_cols: 5 }, "double");
     const matB: Matrix<number> = new Matrix<number>({ n_rows: 5, n_cols: 5 }, "int");
 
     await matA.init();
@@ -119,12 +119,12 @@ describe("matmul", function() {
                                 75.43, 96.31, 34.28, 138.56, 188.4,
                                 90.09, 122.57, 42.61, 151.92, 211.22];
 
-    ObjEqualArray(await Matmul(matA, matB), arr, 1e-4);
+    ObjEqualArray(await Matmul(matA, matB), arr, 1e-8);
   });
 
-  it("float_float_1", async function() {
-    const matA: Matrix<number> = new Matrix<number>({ n_rows: 5, n_cols: 5 }, "float");
-    const matB: Matrix<number> = new Matrix<number>({ n_rows: 5, n_cols: 5 }, "float");
+  it("double_double_1", async function() {
+    const matA: Matrix<number> = new Matrix<number>({ n_rows: 5, n_cols: 5 }, "double");
+    const matB: Matrix<number> = new Matrix<number>({ n_rows: 5, n_cols: 5 }, "double");
 
     await matA.init();
     await matB.init();
@@ -147,6 +147,6 @@ describe("matmul", function() {
                                 86.1149, 101.9045, 52.9405, 148.5286, 194.1445,
                                 102.1596, 129.9033, 63.164, 163.1021, 219.3252];
 
-    ObjEqualArray(await Matmul(matA, matB), arr, 1e-4);
+    ObjEqualArray(await Matmul(matA, matB), arr, 1e-8);
   });
 });

@@ -6,7 +6,7 @@ export class Matrix<T extends MatTsType> {
   // default values.
   protected armaMat: any;
   protected matSize: MatSize = { n_rows: 0, n_cols: 0 };
-  protected elemType: MatType = "float";
+  protected elemType: MatType = "double";
 
   constructor(matSize: MatSize, matType: MatType) {
     this.elemType = matType;
@@ -16,8 +16,8 @@ export class Matrix<T extends MatTsType> {
   async init() {
     const instance = await getInstance();
     switch (this.elemType) {
-      case "float":
-        this.armaMat = new instance.arma_mat_float();
+      case "double":
+        this.armaMat = new instance.arma_mat_double();
         this.armaMat.set_size(this.matSize.n_rows, this.matSize.n_cols)
         break;
       case "int":
@@ -25,7 +25,7 @@ export class Matrix<T extends MatTsType> {
         this.armaMat.set_size(this.matSize.n_rows, this.matSize.n_cols)
         break;
       default:
-        this.armaMat = new instance.arma_mat_float();
+        this.armaMat = new instance.arma_mat_double();
         this.armaMat.set_size(this.matSize.n_rows, this.matSize.n_cols)
     }
   }

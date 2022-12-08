@@ -13,8 +13,8 @@ export async function Abs<T extends MatTsType>(A: Matrix<T>): Promise<Matrix<T>>
   switch (A.objType()) {
     case "mat":
       switch (A.matType) {
-        case "float":
-          inner = instance.abs_mat_float(A.getArmaMat());
+        case "double":
+          inner = instance.abs_mat_double(A.getArmaMat());
           break;
         case "int":
           inner = instance.abs_mat_int(A.getArmaMat());
@@ -23,8 +23,8 @@ export async function Abs<T extends MatTsType>(A: Matrix<T>): Promise<Matrix<T>>
       break;
     case "col":
       switch (A.matType) {
-        case "float":
-          inner = instance.abs_col_float(A.getArmaMat());
+        case "double":
+          inner = instance.abs_col_double(A.getArmaMat());
           break;
         case "int":
           inner = instance.abs_col_int(A.getArmaMat());
@@ -33,8 +33,8 @@ export async function Abs<T extends MatTsType>(A: Matrix<T>): Promise<Matrix<T>>
       break;
     case "row":
       switch (A.matType) {
-        case "float":
-          inner = instance.abs_row_float(A.getArmaMat());
+        case "double":
+          inner = instance.abs_row_double(A.getArmaMat());
           break;
         case "int":
           inner = instance.abs_row_int(A.getArmaMat());

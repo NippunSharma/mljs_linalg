@@ -1,2 +1,2 @@
-export type MatType = "int" | "float";
+export type MatType = "int" | "double";
 export type MatTsType = number;

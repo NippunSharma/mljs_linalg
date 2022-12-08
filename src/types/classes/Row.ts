@@ -12,8 +12,8 @@ export class Row<T extends MatTsType> extends Matrix<T> {
     const instance = await getInstance();
 
     switch (this.matType) {
-      case "float":
-        this.armaMat = new instance.arma_row_float();
+      case "double":
+        this.armaMat = new instance.arma_row_double();
         this.armaMat.set_size(this.matSize.n_cols);
         break;
       case "int":
@@ -21,7 +21,7 @@ export class Row<T extends MatTsType> extends Matrix<T> {
         this.armaMat.set_size(this.matSize.n_cols);
         break;
       default:
-        this.armaMat = new instance.arma_row_float();
+        this.armaMat = new instance.arma_row_double();
         this.armaMat.set_size(this.matSize.n_cols);
     }
   }
