@@ -9,7 +9,7 @@
   "main": "dist/src/types/index.js",
   "types": "dist/src/types/index.d.ts",
   "scripts": {
-    "build": "mkdir -p dist && tsc",
+    "build": "shx mkdir -p dist && tsc && shx cp resources/mljs_linalg.o dist/resources/",
     "clean": "rm -rf dist",
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
     "coverage": "nyc -r text-summary -e .ts -x \"*.test.ts\" npm run test",

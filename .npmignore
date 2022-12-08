@@ -5,3 +5,4 @@ build/
 resources/
 src/
 tests/
+.nyc_output/

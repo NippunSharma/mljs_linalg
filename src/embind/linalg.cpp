@@ -20,7 +20,7 @@
 #include <emscripten/bind.h>
 using namespace emscripten;
 
-EMSCRIPTEN_BINDINGS(webml_linalg) {
+EMSCRIPTEN_BINDINGS(mljs_linalg) {
   REGISTER_ARMA_MAT(int, "arma_mat_int")
   REGISTER_ARMA_MAT(double, "arma_mat_double")
 
