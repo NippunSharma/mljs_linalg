@@ -1,12 +1,10 @@
 import { Matrix } from "../classes/Matrix";
-import { Col } from "../classes/Col";
-import { Row } from "../classes/Row";
-import { getInstance } from "../Stream";
+import { getInstance } from "@ml.js/core";
 import { MatTsType } from "../primitives/Value";
 
-export async function Abs<T extends MatTsType>(A: Matrix<T>): Promise<Matrix<T>> {
+export function Abs<T extends MatTsType>(A: Matrix<T>): Matrix<T> {
   let A_abs = A.newWrapper();
-  const instance = await getInstance();
+  const instance = getInstance();
 
   let inner;
 

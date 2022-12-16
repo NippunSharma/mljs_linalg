@@ -1,6 +1,6 @@
 import { MatSize } from "./MatSize.js";
 import { MatType, MatTsType } from "../primitives/Value.js";
-import { getInstance } from "../Stream.js";
+import { getInstance } from "@ml.js/core";
 
 export class Matrix<T extends MatTsType> {
   // default values.
@@ -11,10 +11,11 @@ export class Matrix<T extends MatTsType> {
   constructor(matSize: MatSize, matType: MatType) {
     this.elemType = matType;
     this.matSize = matSize;
+    this.init();
   }
 
-  async init() {
-    const instance = await getInstance();
+  init() {
+    const instance: any = getInstance();
     switch (this.elemType) {
       case "double":
         this.armaMat = new instance.arma_mat_double();
@@ -175,12 +176,12 @@ export class Matrix<T extends MatTsType> {
     return "mat";
   }
 
-  async asMat(): Promise<Matrix<T>> {
+  asMat(): Matrix<T> {
     if (this.objType() == "mat") {
       return this;
     }
 
-    const instance = await getInstance();
+    const instance = getInstance();
     const A: Matrix<T> = new Matrix<T>({ n_cols: this.size.n_cols, n_rows: this.size.n_rows }, this.matType);
     A.setArmaMat(instance[`${this.objType()}_to_mat_${this.matType}`](this.armaMat));
     return A;

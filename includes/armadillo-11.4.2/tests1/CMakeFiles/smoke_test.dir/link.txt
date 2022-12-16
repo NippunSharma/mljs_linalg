@@ -1,1 +1,0 @@
-/usr/bin/c++  -O2 -rdynamic CMakeFiles/smoke_test.dir/smoke_test.cpp.o -o smoke_test  -Wl,-rpath,/home/nippun/wasm/webml/armadillo-11.4.2 ../libarmadillo.so.11.4.2 -lopenblas -llapack 

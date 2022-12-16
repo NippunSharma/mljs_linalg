@@ -1,15 +1,15 @@
 import { MatSize } from "./MatSize.js";
 import { MatType, MatTsType } from "../primitives/Value.js";
 import { Matrix } from "./Matrix.js";
-import { getInstance } from "../Stream.js";
+import { getInstance } from "@ml.js/core";
 
 export class Row<T extends MatTsType> extends Matrix<T> {
   constructor(matSize: MatSize, matType: MatType) {
     super({n_cols: matSize.n_cols, n_rows: 1}, matType);
   }
 
-  async init() {
-    const instance = await getInstance();
+  init() {
+    const instance: any = getInstance();
 
     switch (this.matType) {
       case "double":

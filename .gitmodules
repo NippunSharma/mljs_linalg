@@ -1,3 +1,7 @@
 [submodule "CLAPACK-3.2.1"]
 	path = includes/CLAPACK-3.2.1
 	url = git@github.com:NippunSharma/CLAPACK-3.2.1
+[submodule "mljs_armadillo"]
+	path = includes/mljs_armadillo
+	url = git@github.com:NippunSharma/mljs_armadillo
+	branch = 11.4.x

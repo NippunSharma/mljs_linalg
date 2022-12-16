@@ -6,10 +6,10 @@
     "url": "https://github.com/NippunSharma/mljs_linalg"
   },
   "description": "A package for linear algebra in the browser !!",
-  "main": "dist/src/types/index.js",
-  "types": "dist/src/types/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "shx mkdir -p dist && tsc && shx cp resources/mljs_linalg.o dist/resources/",
+    "build": "shx mkdir -p dist && tsc",
     "clean": "rm -rf dist",
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
     "coverage": "nyc -r text-summary -e .ts -x \"*.test.ts\" npm run test",
@@ -38,5 +38,8 @@
   },
   "engines": {
     "node": ">=17.5.0"
+  },
+  "dependencies": {
+    "@ml.js/core": "file:../core"
   }
 }

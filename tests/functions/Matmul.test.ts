@@ -1,12 +1,12 @@
-import { Matrix } from "../../dist/src/types/classes/Matrix";
-import { Row } from "../../dist/src/types/classes/Row";
-import { Col } from "../../dist/src/types/classes/Col";
-import { Matmul } from "../../dist/src/types/functions/Matmul";
+import { Matrix } from "../../dist/classes/Matrix";
+import { Row } from "../../dist/classes/Row";
+import { Col } from "../../dist/classes/Col";
+import { Matmul } from "../../dist/functions/Matmul";
 import { ObjEqualArray } from "../TestUtils";
-import { getInstance } from "../../dist/src/types/Stream";
+import { mljsInit } from "@ml.js/core";
 
 before("initialize", async function() {
-  await getInstance();
+  await mljsInit();
 });
 
 describe("matmul", function() {

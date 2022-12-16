@@ -1,5 +1,5 @@
-import { Matrix } from "../dist/src/types/classes/Matrix";
-import { MatTsType } from "../dist/src/types/primitives/Value";
+import { Matrix } from "../dist/classes/Matrix";
+import { MatTsType } from "../dist/primitives/Value";
 
 import { expect } from "chai";
 
