@@ -10,11 +10,13 @@ npm install "@ml.js/linalg"
 
 ### Basic usage.
 ```typescript
+import { mljsInit } from "@ml.js/core";
 import { Matrix } from "@ml.js/linalg";
+
+await mljsInit(); // initialize mljs-core.
 
 async getMatrix() {
   const A: Matrix<number> = new Matrix<number>({ n_rows: 2, n_cols: 2 }, "float");
-  await A.init();
   return A;
 }
 
